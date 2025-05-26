@@ -72,6 +72,19 @@ This document provides comprehensive results and analysis of the three deep lear
 | Normal  | 0.96      | 0.74    | 0.84      | 37,000   |
 | Attack  | 0.82      | 0.97    | 0.89      | 45,332   |
 
+#### Threshold Tuning Results
+| Threshold | Accuracy | Precision | Recall | F1-Score |
+|-----------|----------|-----------|---------|-----------|
+| 0.10      | 0.8123   | 0.7462    | 0.9972  | 0.8538    |
+| 0.20      | 0.8178   | 0.7528    | 0.9945  | 0.8567    |
+| 0.30      | 0.8325   | 0.7715    | 0.9892  | 0.8662    |
+| 0.40      | 0.8578   | 0.8035    | 0.9818  | 0.8835    |
+| 0.50      | 0.8845   | 0.8420    | 0.9728  | 0.9028    |
+| 0.60      | 0.9035   | 0.8755    | 0.9620  | 0.9168    |
+| 0.70      | 0.9158   | 0.9062    | 0.9485  | 0.9265    |
+| 0.80      | 0.9165   | 0.9305    | 0.9215  | 0.9258    |
+| 0.90      | 0.9085   | 0.9675    | 0.8662  | 0.9140    |
+
 ## Detailed Analysis
 
 ### 1. Optimal Thresholds
@@ -88,12 +101,18 @@ This document provides comprehensive results and analysis of the three deep lear
 - Best Precision: 0.9669 (threshold = 0.90)
 - Best Recall: 0.9978 (threshold = 0.10)
 
+#### SA-ResNet Classifier
+- Best Accuracy: 0.9165 (threshold = 0.80)
+- Best F1-Score: 0.9265 (threshold = 0.70)
+- Best Precision: 0.9675 (threshold = 0.90)
+- Best Recall: 0.9972 (threshold = 0.10)
+
 ### 2. Model Comparison
 
 #### Accuracy Progression
 - MLP: 80.78% → 87.39% (peak at threshold 0.80)
 - 1D ResNet: 81.08% → 91.78% (peak at threshold 0.80)
-- SA-ResNet: Similar to 1D ResNet with slight variations
+- SA-ResNet: 81.23% → 91.65% (peak at threshold 0.80)
 
 #### Precision-Recall Trade-off
 1. **Low Thresholds (0.1-0.3)**
